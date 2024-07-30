@@ -1,0 +1,46 @@
+{
+	"schemaVersion": 1,
+	"id": "inventoryscale",
+	"version": "${version}",
+	"name": "Inventory Scale",
+	"description": "Allows customizing your inventory and container scaling independent of GUI scale.",
+	"authors": [
+		"inglettronald",
+		"Microcontrollers"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/inventoryscale",
+		"sources": "https://github.com/MicrocontrollersDev/InventoryScale",
+		"issues": "https://github.com/MicrocontrollersDev/InventoryScale/issues"
+	},
+	"license": "MPL-2.0",
+	"icon": "assets/inventoryscale/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"dev.microcontrollers.inventoryscale.InventoryScale"
+		],
+		"modmenu": [
+			"dev.microcontrollers.inventoryscale.config.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"inventoryscale.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14",
+		"minecraft": ">=1.20",
+		"java": ">=17",
+		"fabric-api": "*",
+		"yet_another_config_lib_v3": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/rejfv9kFJj",
+				"modmenu.modrinth": "https://modrinth.com/mod/overlaytweaks"
+			},
+			"update_checker": true
+		}
+	}
+}
