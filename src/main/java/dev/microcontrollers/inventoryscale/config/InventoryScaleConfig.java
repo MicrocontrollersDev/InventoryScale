@@ -31,7 +31,7 @@ public class InventoryScaleConfig {
                                 .binding(2F, () -> config.containerSize, newVal -> config.containerSize = newVal)
                                 .controller(opt -> FloatSliderControllerBuilder.create(opt)
                                         .valueFormatter(value -> Text.of(String.format("%.1f", value) + "x"))
-                                        .range(0.1F, 6F)
+                                        .range(0.5F, 6F)
                                         .step(0.1F))
                                 .build())
                         .build())
