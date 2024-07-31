@@ -32,7 +32,7 @@ public class InventoryScaleConfig {
                                 .controller(opt -> IntegerSliderControllerBuilder.create(opt)
                                         .valueFormatter(value -> Text.of(String.format("%01d", value) + "x"))
                                         .range(1, 4)
-                                        .step(1))
+                                        .step(0.5))
                                 .build())
                         .build())
         )).generateScreen(parent);
