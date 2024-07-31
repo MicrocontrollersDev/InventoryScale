@@ -1,7 +1,7 @@
 package dev.microcontrollers.inventoryscale.config;
 
 import dev.isxander.yacl3.api.*;
-import dev.isxander.yacl3.api.controller.IntegerSliderControllerBuilder;
+import dev.isxander.yacl3.api.controller.FloatSliderControllerBuilder;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
@@ -17,7 +17,7 @@ public class InventoryScaleConfig {
             .build();
 
 
-    @SerialEntry public int containerSize = 1;
+    @SerialEntry public float containerSize = 1F;
 
     @SuppressWarnings("deprecation")
     public static Screen configScreen(Screen parent) {
@@ -25,14 +25,14 @@ public class InventoryScaleConfig {
                 .title(Text.literal("Inventory Scale"))
                 .category(ConfigCategory.createBuilder()
                         .name(Text.literal("Inventory Scale"))
-                        .option(Option.createBuilder(int.class)
+                        .option(Option.createBuilder(float.class)
                                 .name(Text.literal("Container Scale"))
-                                .description(OptionDescription.of(Text.of("Change container scaling. Some values may make containers bigger than your screen. Set to 1 to use the default.")))
-                                .binding(2, () -> config.containerSize, newVal -> config.containerSize = newVal)
-                                .controller(opt -> IntegerSliderControllerBuilder.create(opt)
-                                        .valueFormatter(value -> Text.of(String.format("%01d", value) + "x"))
-                                        .range(1, 4)
-                                        .step(1))
+                                .description(OptionDescription.of(Text.of("Change container scaling. Some values may make containers bigger than your screen. Set to 1x to use the default.")))
+                                .binding(2F, () -> config.containerSize, newVal -> config.containerSize = newVal)
+                                .controller(opt -> FloatSliderControllerBuilder.create(opt)
+                                        .valueFormatter(value -> Text.of(String.format("%.1f", value) + "x"))
+                                        .range(0.1F, 6F)
+                                        .step(0.1F))
                                 .build())
                         .build())
         )).generateScreen(parent);
