@@ -1,0 +1,5 @@
+{
+  "inventory-scale.inventory-scale": "Inventory Scale",
+  "inventory-scale.container-scale": "Container Scale",
+  "inventory-scale.container-scale.description": "Change container scaling. Some values may make containers bigger than your screen. Set to 1x to use the default."
+}

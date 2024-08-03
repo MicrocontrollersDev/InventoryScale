@@ -22,12 +22,12 @@ public class InventoryScaleConfig {
     @SuppressWarnings("deprecation")
     public static Screen configScreen(Screen parent) {
         return YetAnotherConfigLib.create(CONFIG, ((defaults, config, builder) -> builder
-                .title(Text.literal("Inventory Scale"))
+                .title(Text.translatable("inventory-scale.inventory-scale"))
                 .category(ConfigCategory.createBuilder()
-                        .name(Text.literal("Inventory Scale"))
+                        .name(Text.translatable("inventory-scale.inventory-scale"))
                         .option(Option.createBuilder(float.class)
-                                .name(Text.literal("Container Scale"))
-                                .description(OptionDescription.of(Text.of("Change container scaling. Some values may make containers bigger than your screen. Set to 1x to use the default.")))
+                                .name(Text.translatable("inventory-scale.container-scale"))
+                                .description(OptionDescription.of(Text.translatable("inventory-scale.container-scale.description")))
                                 .binding(2F, () -> config.containerSize, newVal -> config.containerSize = newVal)
                                 .controller(opt -> FloatSliderControllerBuilder.create(opt)
                                         .valueFormatter(value -> Text.of(String.format("%.1f", value) + "x"))

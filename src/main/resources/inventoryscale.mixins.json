@@ -2,11 +2,13 @@
   "required": true,
   "package": "dev.microcontrollers.inventoryscale.mixin",
   "compatibilityLevel": "JAVA_17",
+  "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
   "client": [
     "GameRendererMixin",
     "InventoryScreenMixin",
     "MouseMixin",
-    "ScreenMixin"
+    "ScreenMixin",
+    "dulkir.InventoryScaleMixin"
   ],
   "injectors": {
     "defaultRequire": 1
