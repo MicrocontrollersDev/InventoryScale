@@ -19,18 +19,17 @@ public class InventoryScaleConfig {
 
     @SerialEntry public float containerSize = 1F;
 
-    @SuppressWarnings("deprecation")
     public static Screen configScreen(Screen parent) {
         return YetAnotherConfigLib.create(CONFIG, ((defaults, config, builder) -> builder
                 .title(Text.translatable("inventory-scale.inventory-scale"))
                 .category(ConfigCategory.createBuilder()
                         .name(Text.translatable("inventory-scale.inventory-scale"))
-                        .option(Option.createBuilder(float.class)
+                        .option(Option.<Float>createBuilder()
                                 .name(Text.translatable("inventory-scale.container-scale"))
                                 .description(OptionDescription.of(Text.translatable("inventory-scale.container-scale.description")))
                                 .binding(2F, () -> config.containerSize, newVal -> config.containerSize = newVal)
                                 .controller(opt -> FloatSliderControllerBuilder.create(opt)
-                                        .valueFormatter(value -> Text.of(String.format("%.1f", value) + "x"))
+                                        .formatValue(value -> Text.of(String.format("%.1f", value) + "x"))
                                         .range(0.5F, 6F)
                                         .step(0.1F))
                                 .build())
