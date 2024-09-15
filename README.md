@@ -1,3 +1,5 @@
+# Moved to https://codeberg.org/MicrocontrollersDev/InventoryScale
+
 # Inventory Scale
 
 Allows customizing your inventory and container scaling independent of GUI scale.
